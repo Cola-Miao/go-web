@@ -1,0 +1,18 @@
+system:
+  model: "debug" # debug, normal
+log:
+  path: "log"
+  level: -4 # Debug = -4, Info = 0, Warn = 4, Error = 8
+  addSource: true
+mysql:
+  user: "root"
+  pass: "root"
+  ip: "127.0.0.1"
+  port: 3306
+  dbname: "go_web"
+redis:
+  addr: "127.0.0.1:6379"
+  password: ""
+  db: 0
+server:
+  addr: "127.0.0.1:5912"
