@@ -1,19 +1,14 @@
 package redis
 
 import (
-	"context"
 	"github.com/redis/go-redis/v9"
 	"go-web/config"
 )
 
 var rds *redis.Client
 
-func Init() (err error) {
-	ctx := context.Background()
-
+func Init() {
 	rds = redis.NewClient(redisConfig())
-	err = rds.Ping(ctx).Err()
-
 	return
 }
 

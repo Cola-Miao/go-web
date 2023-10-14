@@ -18,9 +18,7 @@ func Default() (err error) {
 	if err = mysql.Init(); err != nil {
 		return
 	}
-	if err = redis.Init(); err != nil {
-		return
-	}
+	redis.Init()
 	if err = router.Init(); err != nil {
 		return
 	}

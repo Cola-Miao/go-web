@@ -22,6 +22,9 @@ func Init() (err error) {
 	vp.WatchConfig()
 	vp.OnConfigChange(func(in fsnotify.Event) {
 		slog.Info("config changed", in.Op, in.Name)
+		if err = vp.Unmarshal(&Cfg); err != nil {
+			slog.Error("load config failed", "error", err.Error())
+		}
 	})
 
 	return
